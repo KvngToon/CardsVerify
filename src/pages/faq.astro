@@ -1,0 +1,60 @@
+---
+import Base from "@/layouts/Base.astro";
+import Accordion from "@/layouts/shortcodes/Accordion.jsx";
+---
+
+<Base title="CardVerify FAQ" description="Answers to common gift card verification questions.">
+  <section class="py-16">
+    <div class="container">
+      <div class="mx-auto max-w-3xl">
+        <h1 class="h2 mb-8 text-center">Frequently Asked Questions</h1>
+
+        <Accordion client:load title="Is my information safe?" className="mb-3">
+          <p>
+            Yes. We use industry-standard encryption and never store your card number or PIN. Data is processed securely and discarded immediately after verification.
+          </p>
+        </Accordion>
+
+        <Accordion client:load title="Which card types do you support?" className="mb-3">
+          <p>
+            We support all major brands including Amazon, iTunes, Google Play, Target, Walmart, and 50+ more. See the full list on the Supported Cards page.
+          </p>
+        </Accordion>
+
+        <Accordion client:load title="Why do you need my PIN?" className="mb-3">
+          <p>
+            Many gift cards require a PIN to securely retrieve balance information and ensure you are the card holder.
+          </p>
+        </Accordion>
+
+        <Accordion client:load title="Do I need to create an account?" className="mb-3">
+          <p>
+            No account is required. CardVerify lets you check balances anonymously.
+          </p>
+        </Accordion>
+
+        <Accordion client:load title="How long does verification take?" className="mb-3">
+          <p>
+            Typically just a few seconds, depending on the card brand's response time.
+          </p>
+        </Accordion>
+
+        <Accordion client:load title="Can I check multiple cards?" className="mb-3">
+          <p>
+            Yes. You can submit the form multiple times for different cards. Optional: enable local history to remember your last 5 checks on this device.
+          </p>
+        </Accordion>
+
+        <Accordion client:load title="Is there a fee to use CardVerify?" className="mb-6">
+          <p>
+            No. CardVerify is free for personal use.
+          </p>
+        </Accordion>
+
+        <div class="mt-8 text-center">
+          <a href="/contact" class="btn btn-primary">Still need help? Contact us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

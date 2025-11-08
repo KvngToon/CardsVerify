@@ -1,0 +1,160 @@
+---
+import PageHeader from "@/components/PageHeader.astro";
+import config from "@/config/config.json";
+import Base from "@/layouts/Base.astro";
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
+
+const entry = (await getEntry(
+  "contact",
+  "-index"
+)) as CollectionEntry<"contact">;
+const { contact_form_action } = config.params;
+const contact = entry.data;
+const page_data = {
+  ...contact,
+  content: entry.body,
+};
+---
+
+<Base
+  title={contact.title}
+  meta_title={contact.meta_title}
+  description={contact.description}
+  image={contact.image}
+>
+  <section class="page-hero pb-6 pt-16">
+    <div class="container">
+      <PageHeader page_data={page_data} />
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row">
+        <div class="mb-10 text-center md:col-6 md:order-2 md:mb-0 md:pt-9">
+          <div class="contact-img relative inline-flex pb-5 pl-5">
+            <Image
+              src="/images/contact-img.png"
+              height={544}
+              width={500}
+              alt=""
+            />
+            <Image
+              class="absolute bottom-0 left-0 -z-[1] h-14 w-14"
+              src="/images/shape-2.png"
+              alt=""
+              height={56}
+              width={56}
+            />
+          </div>
+        </div>
+        <div class="md:col-6 md:order-1">
+          <form id="cvContactForm" class="lg:max-w-[484px]" onsubmit="return false;">
+            <div class="form-group mb-5">
+              <label class="form-label" for="name">Full Name</label>
+              <input
+                class="form-control"
+                type="text"
+                id="name"
+                placeholder="Your Full Name"
+                required
+              />
+            </div>
+            <div class="form-group mb-5">
+              <label class="form-label" for="eamil">Email Adrdess</label>
+              <input
+                class="form-control"
+                type="text"
+                id="email"
+                placeholder="Your  Email Address"
+                required
+              />
+            </div>
+            <div class="form-group mb-5">
+              <label class="form-label" for="reason">Reason/Purpose</label>
+              <select name="reason" id="reason" class="form-select" required>
+                <option value="">Select reason/purpose</option>
+                <option value="verification-issue">Issue with verification</option>
+                <option value="brand-partnership">Brand partnership</option>
+                <option value="feedback">Feedback</option>
+                <option value="support">General support</option>
+              </select>
+            </div>
+            <div class="form-group mb-5">
+              <label class="form-label" for="message">Message Here</label>
+              <textarea class="form-control" id="message" cols="30" rows="6"
+              ></textarea>
+            </div>
+            <button id="cvContactSubmit" type="button" class="btn btn-primary block w-full">Send Message</button>
+            <p id="cvContactMsg" class="mt-3 text-center text-sm"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script is:inline>
+  (function initContact(){
+    function bind(){
+      const form = document.getElementById('cvContactForm');
+      const btn = document.getElementById('cvContactSubmit');
+      const msg = document.getElementById('cvContactMsg');
+      if (!form || !btn) { console.warn('[contact] form or button not found'); return; }
+      console.debug('[contact] binding click handler');
+      btn.addEventListener('click', async () => {
+      const name = /** @type {HTMLInputElement} */(document.getElementById('name'))?.value || '';
+      const email = /** @type {HTMLInputElement} */(document.getElementById('email'))?.value || '';
+      const reason = /** @type {HTMLSelectElement} */(document.getElementById('reason'))?.value || '';
+      const message = /** @type {HTMLTextAreaElement} */(document.getElementById('message'))?.value || '';
+      if (!name || !email || !message) {
+        if (msg) { msg.textContent = 'Please fill in name, email, and message.'; msg.className = 'mt-3 text-center text-sm text-red-600'; }
+        return;
+      }
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+      if (msg) { msg.textContent = ''; }
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, reason, message })
+        });
+        const data = await res.json().catch(()=>({}));
+        if (res.ok && data?.ok && data?.emailed) {
+          if (msg) { msg.textContent = 'Message sent successfully.'; msg.className = 'mt-3 text-center text-sm text-(--color-primary)'; }
+          // reset
+          /** @type {HTMLInputElement} */(document.getElementById('name')).value = '';
+          /** @type {HTMLInputElement} */(document.getElementById('email')).value = '';
+          /** @type {HTMLSelectElement} */(document.getElementById('reason')).selectedIndex = 0;
+          /** @type {HTMLTextAreaElement} */(document.getElementById('message')).value = '';
+        } else if (res.ok && data?.ok && !data?.emailed) {
+          if (msg) { msg.textContent = 'Email service is not configured on this environment (message not emailed).'; msg.className = 'mt-3 text-center text-sm text-amber-600'; }
+        } else {
+          if (msg) { msg.textContent = data?.error || 'Failed to send message.'; msg.className = 'mt-3 text-center text-sm text-red-600'; }
+        }
+      } catch (e) {
+        if (msg) { msg.textContent = 'Network error. Please try again.'; msg.className = 'mt-3 text-center text-sm text-red-600'; }
+      } finally {
+        if (btn) { btn.disabled = false; btn.textContent = 'Send Message'; }
+      }
+      });
+      // Delegated fallback in case the above fails
+      document.addEventListener('click', (ev) => {
+        const t = ev.target;
+        if (t instanceof HTMLElement && t.id === 'cvContactSubmit') {
+          if (t._cvHandled) return;
+          t._cvHandled = true;
+          t.click();
+          setTimeout(()=>{ t._cvHandled = false; }, 0);
+        }
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', bind, { once: true });
+    } else {
+      bind();
+    }
+  })();
+</script>

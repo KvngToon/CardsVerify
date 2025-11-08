@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CardVerify Open Graph image">
+  <defs>
+    <linearGradient id="cvGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFD600"/>
+      <stop offset="50%" stop-color="#FF6F00"/>
+      <stop offset="100%" stop-color="#FF4081"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="80%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#cvGrad)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g transform="translate(120,135)">
+    <g transform="scale(2.2)">
+      <path fill="#FFFFFF" fill-opacity="0.15" d="M110 10c18 12 36 12 54 0v63c0 30-23 56-54 77-31-21-54-47-54-77V10c18 12 36 12 54 0z"/>
+      <g stroke="#fff" stroke-opacity="0.9" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" transform="translate(25,32)">
+        <path d="M30 38h60"/>
+        <path d="M30 56h34"/>
+        <path d="M78 70l12 12 20-26"/>
+        <rect x="18" y="18" width="82" height="54" rx="10"/>
+      </g>
+    </g>
+    <g transform="translate(340,70)">
+      <text x="0" y="96" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="120" font-weight="800" fill="#FFFFFF">CardVerify</text>
+      <text x="4" y="156" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="44" font-weight="600" fill="#FFFFFF" opacity="0.95">Instant Gift Card Verification</text>
+    </g>
+  </g>
+</svg>

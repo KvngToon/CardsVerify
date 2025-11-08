@@ -1,0 +1,107 @@
+---
+import Base from "@/layouts/Base.astro";
+---
+
+<Base title="Supported Gift Cards" description="Browse all gift card brands supported by CardVerify.">
+  <section class="py-16">
+    <div class="container">
+      <h1 class="h2 mb-6 text-center">Supported Cards</h1>
+      <p class="mx-auto mb-10 max-w-2xl text-center text-text">
+        Search and browse supported brands. Click a brand to start verification.
+      </p>
+      <div class="mx-auto mb-8 max-w-xl">
+        <input type="text" id="search" placeholder="Search brands (e.g., Amazon)" class="w-full rounded-md border border-border p-3 focus:outline-none focus:ring-2 focus:ring-(--color-primary)" />
+      </div>
+
+      <div id="brands" class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        <!-- Online & Marketplaces -->
+        <a href="/verify" data-name="Amazon" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Amazon</a>
+        <a href="/verify" data-name="Apple (iTunes)" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Apple (iTunes)</a>
+        <a href="/verify" data-name="Google Play" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Google Play</a>
+        <a href="/verify" data-name="Microsoft/Xbox" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Microsoft/Xbox</a>
+        <a href="/verify" data-name="eBay" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">eBay</a>
+        <a href="/verify" data-name="Etsy" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Etsy</a>
+
+        <!-- Gaming -->
+        <a href="/verify" data-name="PlayStation (PSN)" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">PlayStation (PSN)</a>
+        <a href="/verify" data-name="Nintendo eShop" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Nintendo eShop</a>
+        <a href="/verify" data-name="Steam" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Steam</a>
+        <a href="/verify" data-name="Roblox" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Roblox</a>
+        <a href="/verify" data-name="Razer Gold" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Razer Gold</a>
+        <a href="/verify" data-name="Blizzard Battle.net" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Blizzard Battle.net</a>
+
+        <!-- Major Retail -->
+        <a href="/verify" data-name="Target" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Target</a>
+        <a href="/verify" data-name="Walmart" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Walmart</a>
+        <a href="/verify" data-name="Best Buy" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Best Buy</a>
+        <a href="/verify" data-name="Home Depot" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Home Depot</a>
+        <a href="/verify" data-name="Lowe's" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Lowe's</a>
+        <a href="/verify" data-name="Costco" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Costco</a>
+        <a href="/verify" data-name="Macy's" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Macy's</a>
+        <a href="/verify" data-name="Kohl's" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Kohl's</a>
+        <a href="/verify" data-name="TJ Maxx" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">TJ Maxx</a>
+        <a href="/verify" data-name="Marshalls" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Marshalls</a>
+        <a href="/verify" data-name="Nordstrom" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Nordstrom</a>
+        <a href="/verify" data-name="H&M" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">H&M</a>
+        <a href="/verify" data-name="Gap" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Gap</a>
+        <a href="/verify" data-name="Old Navy" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Old Navy</a>
+        <a href="/verify" data-name="Banana Republic" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Banana Republic</a>
+
+        <!-- Brands & Fashion -->
+        <a href="/verify" data-name="Nike" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Nike</a>
+        <a href="/verify" data-name="Adidas" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Adidas</a>
+        <a href="/verify" data-name="Sephora" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Sephora</a>
+        <a href="/verify" data-name="Ulta" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Ulta</a>
+
+        <!-- Food & Delivery -->
+        <a href="/verify" data-name="Starbucks" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Starbucks</a>
+        <a href="/verify" data-name="Dunkin'" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Dunkin'</a>
+        <a href="/verify" data-name="DoorDash" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">DoorDash</a>
+        <a href="/verify" data-name="Uber Eats" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Uber Eats</a>
+        <a href="/verify" data-name="Grubhub" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Grubhub</a>
+        <a href="/verify" data-name="Chipotle" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Chipotle</a>
+        <a href="/verify" data-name="Domino's" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Domino's</a>
+        <a href="/verify" data-name="Subway" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Subway</a>
+        <a href="/verify" data-name="McDonald's" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">McDonald's</a>
+
+        <!-- Entertainment & Subscriptions -->
+        <a href="/verify" data-name="Netflix" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Netflix</a>
+        <a href="/verify" data-name="Hulu" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Hulu</a>
+        <a href="/verify" data-name="Disney+" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Disney+</a>
+        <a href="/verify" data-name="Spotify" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Spotify</a>
+        <a href="/verify" data-name="Paramount+" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Paramount+</a>
+        <a href="/verify" data-name="Max (HBO Max)" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Max (HBO Max)</a>
+
+        <!-- Travel & Rides -->
+        <a href="/verify" data-name="Uber" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Uber</a>
+        <a href="/verify" data-name="Lyft" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Lyft</a>
+        <a href="/verify" data-name="Airbnb" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Airbnb</a>
+        <a href="/verify" data-name="Southwest" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Southwest</a>
+        <a href="/verify" data-name="Delta" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Delta</a>
+        <a href="/verify" data-name="Hotels.com" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Hotels.com</a>
+
+        <!-- Prepaid & Cash Cards -->
+        <a href="/verify" data-name="Visa Prepaid" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Visa Prepaid</a>
+        <a href="/verify" data-name="Mastercard Prepaid" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Mastercard Prepaid</a>
+        <a href="/verify" data-name="American Express Gift Card" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">American Express Gift Card</a>
+        <a href="/verify" data-name="Vanilla Visa" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Vanilla Visa</a>
+        <a href="/verify" data-name="OneVanilla" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">OneVanilla</a>
+        <a href="/verify" data-name="Netspend" class="block rounded-lg bg-white p-4 text-center shadow hover:shadow-md">Netspend</a>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    document.addEventListener("astro:page-load", () => {
+      const input = document.getElementById("search");
+      const items = Array.from(document.querySelectorAll("#brands a"));
+      input?.addEventListener("input", () => {
+        const q = input.value.toLowerCase();
+        items.forEach((el) => {
+          const name = el.dataset.name?.toLowerCase() || "";
+          el.classList.toggle("hidden", !name.includes(q));
+        });
+      });
+    });
+  </script>
+</Base>

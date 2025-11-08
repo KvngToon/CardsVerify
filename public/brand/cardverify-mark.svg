@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CardVerify mark">
+  <defs>
+    <linearGradient id="cvGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFD600"/>
+      <stop offset="50%" stop-color="#FF6F00"/>
+      <stop offset="100%" stop-color="#FF4081"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.6"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <!-- Shield -->
+    <path fill="url(#cvGrad)" d="M128 20c28 18 56 18 84 0v98c0 46-36 86-84 118-48-32-84-72-84-118V20c28 18 56 18 84 0z"/>
+    <!-- Card/Check glyph -->
+    <g stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M86 104h84"/>
+      <path d="M86 132h48"/>
+      <path d="M154 152l18 18 32-40"/>
+      <rect x="70" y="78" width="116" height="76" rx="14"/>
+    </g>
+  </g>
+</svg>

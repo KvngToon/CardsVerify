@@ -1,0 +1,21 @@
+---
+import Base from "@/layouts/Base.astro";
+import VerifyForm from "@/layouts/components/VerifyForm.astro";
+---
+
+<Base title="Verify Gift Card Balance" description="Instant, secure gift card balance check for all major brands.">
+  <section class="py-16">
+    <div class="container">
+      <div class="mx-auto max-w-2xl">
+        <h1 class="h2 mb-4 text-center">Verify Your Gift Card</h1>
+        <p class="mb-8 text-center text-text">
+          Select your card type, enter the card number and PIN to check your balance.
+        </p>
+        <VerifyForm />
+        <p class="mt-4 text-center text-xs text-text">
+          Privacy-first: We don’t store your card data.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

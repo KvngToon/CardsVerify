@@ -1,0 +1,43 @@
+{
+  "main": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "How It Works",
+      "url": "/how-it-works"
+    },
+    {
+      "name": "Supported Cards",
+      "url": "/supported-cards"
+    },
+    {
+      "name": "Why CardVerify",
+      "url": "/features"
+    },
+    {
+      "name": "FAQ",
+      "url": "/faq"
+    },
+    {
+      "name": "Verify Card",
+      "url": "/verify"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    }
+  ],
+
+  "footer": [
+    {
+      "name": "Contact",
+      "url": "/contact"
+    },
+    { "name": "Home", "url": "/" },
+    { "name": "Supported Cards", "url": "/supported-cards" },
+    { "name": "FAQ", "url": "/faq" },
+    { "name": "How It Works", "url": "/how-it-works" }
+  ]
+}

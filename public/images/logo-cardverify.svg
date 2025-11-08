@@ -1,0 +1,8 @@
+<svg width="160" height="36" viewBox="0 0 160 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="6" width="46" height="28" rx="4" fill="#1ABC9C"/>
+  <rect x="8" y="12" width="34" height="4" rx="2" fill="white" opacity="0.9"/>
+  <rect x="8" y="19" width="20" height="4" rx="2" fill="white" opacity="0.9"/>
+  <path d="M44 8 L52 0 L60 8" fill="#1ABC9C"/>
+  <path d="M36 24 l4 4 l10 -10" stroke="#FFD166" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="70" y="26" font-family="Poppins, Arial, sans-serif" font-weight="700" font-size="18" fill="#2C3E50">CardVerify</text>
+</svg>
