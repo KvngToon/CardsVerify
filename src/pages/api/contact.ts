@@ -19,7 +19,7 @@ export async function POST(context: APIContext) {
       return new Response(JSON.stringify({ ok: false, error: "Missing required fields" }), { status: 400, headers: { "Content-Type": "application/json" } });
     }
 
-    const RESEND_API_KEY = import.meta.env.RESEND_API_KEY as string | undefined;
+    const RESEND_API_KEY = (context.locals.runtime?.env?.RESEND_API_KEY || import.meta.env.RESEND_API_KEY) as string | undefined;
     const to = "kvngtoon001@gmail.com";
 
     const lines = [
