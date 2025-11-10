@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="800" height="220" viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CardVerify logo">
+<svg width="800" height="220" viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CardsVerify logo">
   <defs>
     <linearGradient id="cvGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#FFD600"/>
@@ -19,6 +19,6 @@
   </g>
   <!-- Wordmark -->
   <g transform="translate(200,35)">
-    <text x="0" y="70" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="84" font-weight="700" fill="url(#cvGrad)">CardVerify</text>
+    <text x="0" y="70" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="84" font-weight="700" fill="url(#cvGrad)">CardsVerify</text>
   </g>
 </svg>
