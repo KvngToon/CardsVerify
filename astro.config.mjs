@@ -17,6 +17,12 @@ export default defineConfig({
   vite: { plugins: [tailwindcss()] },
   output: "server",
   adapter: cloudflare(),
+  image: {
+    service: {
+      // Use the compile-time image service so Cloudflare Workers don't need sharp at runtime
+      entrypoint: "astro/assets/services/compile",
+    },
+  },
   integrations: [
     react(),
     sitemap(),
