@@ -20,7 +20,7 @@ export async function POST(context: APIContext) {
     }
 
     const RESEND_API_KEY = (context.locals.runtime?.env?.RESEND_API_KEY || import.meta.env.RESEND_API_KEY) as string | undefined;
-    const to = "kvngtoon001@gmail.com";
+    const to = "cardsverify@proton.me";
 
     const lines = [
       "New contact form submission",
@@ -46,7 +46,7 @@ export async function POST(context: APIContext) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "onboarding@resend.dev",
+        from: "noreply@cardsverify.org",
         to: [to],
         subject: `Contact form: ${reason || "General"}`,
         text,
