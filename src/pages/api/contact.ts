@@ -20,7 +20,7 @@ export async function POST(context: APIContext) {
     }
 
     const RESEND_API_KEY = (context.locals.runtime?.env?.RESEND_API_KEY || import.meta.env.RESEND_API_KEY) as string | undefined;
-    const to = "cardsverify@proton.me";
+    const to = "kvngtoon001@gmail.com";
 
     const lines = [
       "New contact form submission",
